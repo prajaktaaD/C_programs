@@ -1,0 +1,20 @@
+//finding simple interst and compound interest
+#include<stdio.h>
+#include<math.h>
+float p,r,t;
+int main(){
+printf("enter value of p:");
+scanf("%f",&p);
+
+printf("enter value of r:");
+scanf("%f",&r);
+
+printf("enter value of t:");
+scanf("%f",&t);
+
+
+printf("si=%f",(p*r*t)/100);
+printf("ci=%f",p*(pow((1+r/100),t)-1));
+
+
+}
