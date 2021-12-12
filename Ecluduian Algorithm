@@ -1,0 +1,40 @@
+//euclids algorithm to find HCF and LCM of two numbers::
+#include<stdio.h>
+//  Finding HCF using Euclid's Algorithm
+//  https://en.wikipedia.org/wiki/Euclidean_algorithm
+int calculateHcf(int smaller, int larger)
+{
+    int rem, tmp;
+    if(larger < smaller)
+    {
+        tmp = larger;
+        larger = smaller;
+        smaller = tmp;
+    }
+    while(1)
+    {
+        rem = larger % smaller;
+        if(rem == 0)
+        {
+            return smaller;
+        }
+        larger = smaller;
+        smaller = rem;
+    }
+}
+int calculateLcm(int a, int b)
+{
+    // lcm = product of two numbers / hcf
+    return (a * b) / calculateHcf(a, b);
+}
+int main()
+{
+    int a, b,ret;
+    printf("Enter two numbers: ");
+    scanf("%d%d",&a,&b);
+    ret  = calculateHcf(a, b);
+    printf("HCF = %d\n", ret);
+    ret  = calculateLcm(a, b);
+    printf("LCM = %d\n", ret);
+    return ret;
+}    
