@@ -1,0 +1,34 @@
+//finding factors of two numbers and check weather it is prime or not
+#include <stdio.h>
+void prime(int num);
+int num1,num2,i,f;
+int main()
+{
+    printf("enter val of num1:");
+    scanf("%d",&num1);
+    printf("enter val of num2:");
+    scanf("%d",&num2);
+    prime(num1);
+   prime(num2);
+    
+
+    return 0;
+}
+void prime(int num)
+{
+    f=0;
+    for(i=2;i<num;i++)
+    {
+        if(num%i==0)
+        {f=1;
+         printf("%d ",i);
+        } 
+        //break;
+    }
+    
+    if(f==1)
+    printf("\nit is composite\n");
+    else
+    printf("\nit is prime");
+    
+}
